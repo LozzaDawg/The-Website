@@ -5,10 +5,12 @@ function keyInput(keyCode){
   }
   if(keyCode == 74){
     console.log("pressed J");
+    if(currentRow < allColumns[currentColumn].length-1) currentRow++;
     //selected down
   }
   if(keyCode == 75){
     console.log("pressed K");
+      if(currentRow > 0) currentRow--;
     //selected up
   }
   if(keyCode == 76){

@@ -67,6 +67,7 @@ function update(){
   c.fillStyle = "rgb(220, 0, 255)"
   c.fillRect(0,0,canvas.width,canvas.height);
 
+
   mainBlock.render();
   previewBlock.render();
 
@@ -85,8 +86,9 @@ function update(){
   gamesBlock11.render();
   // gamesBlock12.render();
   // gamesBlock13.render();
-
+  
   keyInput();
+  selectedBlock = allColumns[currentColumn][currentRow];
   console.log("Updated");
 }
 
