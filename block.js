@@ -8,9 +8,11 @@ class Block{
     this.color=color;
     this.sublist=[];
     this.canRender=false;
+    this.main = false;
   }
 
   render(){
+    if(this.main==true) this.canRender=true;
     c.fillStyle = this.color;
     if(selectedBlock==this){
       c.fillStyle = "rgb(0, 147, 6)";
@@ -20,6 +22,7 @@ class Block{
     }
 
     if(this.canRender) c.fillRect(this.x,this.y,this.width,this.height);
+    this.canRender = false;
   }
 
 }

@@ -26,9 +26,9 @@ const gamesBlock = new Block(canvas.width/(size/2),canvas.height/(size/5),(canva
 
 const archBlock = new Block(canvas.width/(size/2),canvas.height/(size/8),(canvas.width/size)*3,(canvas.height/size)*2,"black");
 
-aboutMeBlock.canRender=true;
-gamesBlock.canRender=true;
-archBlock.canRender=true;
+aboutMeBlock.main=true;
+gamesBlock.main=true;
+archBlock.main=true;
 //column3.push()
 
 //gamesBlock.sublist.push(gamesBlock1);
@@ -48,16 +48,21 @@ archBlock.canRender=true;
 // const gamesBlock12 = new Block(canvas.width/(size/10),canvas.height/(size/5),(canvas.width/size)*3,(canvas.height/size)*2,"black");
 // const gamesBlock13 = new Block(canvas.width/(size/10),canvas.height/(size/8),(canvas.width/size)*3,(canvas.height/size)*2,"black");
 
-var column1 = [aboutMeBlock,gamesBlock,archBlock]
-var column2 = []
-var column3 = []
+var column1 = [aboutMeBlock,gamesBlock,archBlock];
+var column2 = [];
+var column3 = [];
+function updateColumns(){
+  for(var i = 0; i < selectedBlock.sublist.length; i++){
+    column2.push(selectedBlock.sublist[i]);
+  }
+}
 var allColumns = [column1,column2,column3];
 
 // for(var i = 0; i < selectedBlock.sublist.length;i++){
 //   column2.push(selectedBlock.sublist[i]);
 // }
 var currentColumn = 0;
-var currentRow = 1;
+var currentRow = 0;
 var selectedBlock = allColumns[currentColumn][currentRow];
 
 //get 1st column movement, then start to render 2nd column, then get cross coulmn movement
@@ -86,11 +91,11 @@ function update(){
   gamesBlock11.render();
   // gamesBlock12.render();
   // gamesBlock13.render();
-  
+
   keyInput();
   selectedBlock = allColumns[currentColumn][currentRow];
   console.log("Updated");
 }
 
-this.setInterval(update, 60);
-//update();
+//this.setInterval(update, 30);
+update();
