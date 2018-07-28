@@ -74,6 +74,10 @@ header .highlight, header .current a{
   font-weight: bold;
 }
 
+p .italics{
+  font-style: italic;
+}
+
 header a:hover{
   color: #cccccc;
   font-weight: bold;
@@ -142,8 +146,19 @@ header a:hover{
   padding: 10px;
 }
 
+#boxes .imgBox{
+  text
+  width: 95px;
+  height: 95px;
+}
+
 #boxes .box img{
   width: 90px;
+}
+
+#boxes .box img:hover{
+  width: 95px;
+  text-align: center;
 }
 
 /* Sidebar */
