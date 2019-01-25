@@ -50,21 +50,29 @@
         <aside id="sidebar">
           <div class="dark">
             <h3>Suggest Game Ideas</h3>
-            <form class="gameIdea">
+
+            <form id="gameIdea">
               <div>
                 <label>Name</label><br>
-                <input type="text" placeholder="Name">
-              </div>
-              <div>
-                <label>Email</label><br>
-                <input type="text" placeholder="example@gmail.com">
+                <input name="name" type="text" placeholder="Anonymous">
               </div>
               <div>
                 <label>Idea</label><br>
-                <textarea placeholder="Your epic game idea"></textarea>
+                <input name = "idea" type="text" placeholder="Your epic game idea"></input>
               </div>
-              <button class="button_1" type="submit">Send</button>
+              <button class="button_1" onclick="submitidea()">Send</button>
             </form>
+
+            <script>
+
+            function submitidea(){
+              console.log('mem')
+              var textArea = document.getElementById("gameIdea");
+              var idea = textArea.elements["idea"].value;
+              console.log(idea);
+            }
+            </script>
+
           </div>
         </aside>
 
